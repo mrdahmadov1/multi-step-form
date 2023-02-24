@@ -7,17 +7,8 @@
   padding: 12px 48px 108px;
 }
 
-.mat-horizontal-stepper-header-container.ng-tns-c21-0 {
-  position: relative;
-}
-
-.mat-horizontal-stepper-header-container.ng-tns-c21-0::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: #ffffff00;
+.mat-horizontal-stepper-header {
+  pointer-events: none;
 }
 
 .mat-step-header.mat-primary {
