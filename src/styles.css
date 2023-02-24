@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Include your own custom styles */
 :root {
   /*Primary*/
   --marine-lue: hsl(213, 96%, 18%);
@@ -19,7 +20,8 @@
 
 body {
   font-size: 16px;
-  font-family: Ubuntu;
+  font-family: Ubuntu !important;
+  background-color: var(--magnolia);
 }
 
 @font-face {
@@ -35,4 +37,14 @@ body {
 @font-face {
   font-family: 'Ubuntu';
   src: url('./assets/fonts/Ubuntu-Regular.ttf');
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }

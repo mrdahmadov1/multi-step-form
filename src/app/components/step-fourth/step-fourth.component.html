@@ -1,0 +1,31 @@
+<div ngClass="step-content bg-white p-6 rounded-xl">
+  <h1 ngClass="font-bold text-2xl mt-2">Finishing up</h1>
+  <h4 ngClass="text-xs text-gray-400 mt-2 mb-4 w-3/4">Double-check everything looks OK before confirming</h4>
+  <div class="finishing-content">
+    <div class=" p-4 bg-gray-100/75 rounded-md">
+      <div class="plan pb-2 flex items-start justify-between font-semibold border-b">
+        <div>
+          <p class="text-sm text-blue-800 leading-3">
+            {{plan?.name | titlecase}}({{isYearly ? 'Yearly':'Monthly'}})</p>
+          <a href="#" class="underline text-xs text-gray-400 font-medium leading-3">Change</a>
+        </div>
+        <span class=" text-sm text-blue-800">{{'$' + plan?.price + (isYearly ? '/yr':'/mo')}}</span>
+      </div>
+      <div *ngFor="let addOn of addOns" class="addOn pt-2 flex items-center justify-between font-medium">
+        <p class="text-sm text-gray-400">{{addOn.name}}</p>
+        <span class="text-sm text-blue-800">{{'+$' + addOn.price + (isYearly ? '/yr':'/mo')}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="p-4 total-content flex justify-between items-center">
+    <p class="text-sm text-gray-400">Total (per year)</p>
+    <span class="text-sm text-purple-500 font-semibold">{{'+$' + totalPrice + (isYearly ? '/yr':'/mo')}}</span>
+  </div>
+
+  <div class="buttons mt-6 flex justify-between">
+    <button mat-flat-button matStepperPrevious color="warn" class="text-sm font-medium">Back</button>
+    <button mat-flat-button matStepperNext color="primary" (click)="confirm()"
+      class="text-sm font-medium">Confirm</button>
+  </div>
+</div>

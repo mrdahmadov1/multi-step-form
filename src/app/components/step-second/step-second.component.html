@@ -1,0 +1,27 @@
+<div ngClass="step-content bg-white p-6 rounded-xl">
+  <h1 ngClass="font-bold text-2xl mt-2">Select your plan</h1>
+  <h4 ngClass="text-xs text-gray-400 mt-2 mb-4 w-3/4">You have the option of monthly or yearly billing.</h4>
+  <div class="plan-content" *ngFor="let plan of plans">
+    <div (click)="selectPlan(plan)" [ngClass]="selectedPlan === plan ? plan.borderColor:''"
+      class="plan flex items-center py-2 px-4 mb-2 border-2 rounded-md">
+      <img class="mr-4" [src]="'../../../assets/images/icon-' + plan.name + '.svg'" [alt]="plan.name + 'Plan'">
+      <div>
+        <h3 class="text-sm font-semibold text-blue-800">{{plan.name}}</h3>
+        <p class=" text-xs text-gray-400">{{isYearly ? '$'+plan.price+'/yr' : '$'+plan.price+'/mo'}}</p>
+        <span class="text-xs text-sky-600" *ngIf="isYearly">2 months free</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub flex items-center justify-end mt-4 py-4 px-4 bg-gray-100 rounded-md">
+    <mat-slide-toggle [(ngModel)]="isYearly" [color]="'warn'" (toggleChange)="isYearlyListener()">
+    </mat-slide-toggle>
+    <p class="text-xs font-semibold">Yearly</p>
+  </div>
+
+  <div class="buttons mt-6 flex justify-between">
+    <button mat-flat-button matStepperPrevious color="warn" class="text-sm font-medium">Back</button>
+    <button [disabled]="!selectedPlan" (click)="toThirdStep(selectedPlan)" mat-flat-button matStepperNext
+      color="primary" class="text-sm font-medium">Next</button>
+  </div>
+</div>

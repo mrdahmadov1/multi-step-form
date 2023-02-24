@@ -1,0 +1,24 @@
+<div ngClass="step-content bg-white p-6 rounded-xl">
+  <h1 ngClass="font-bold text-2xl mt-2">Pick add-ons</h1>
+  <h4 ngClass="text-xs text-gray-400 mt-2 mb-4 w-3/4">Add-ons help enhance your gaming experience.</h4>
+  <div class="addOn-content">
+    <div *ngFor="let addOn of addOns" (click)="addOn.isSelected = !addOn.isSelected"
+      [ngClass]="addOn.isSelected ? 'border-blue-800/50':''"
+      class="addOn flex items-center py-2 px-3 mb-2 border-2 rounded-md">
+      <input type="checkbox" [checked]="addOn.isSelected" class="form-checkbox h-4 w-4 mr-3">
+      <div class="flex justify-between items-center grow">
+        <div>
+          <h3 class="text-sm font-semibold text-blue-800">{{addOn.name}}</h3>
+          <p class=" text-xs text-gray-400">{{addOn.desc}}</p>
+        </div>
+        <span
+          class="text-blue-800 font-semibold text-xs">{{isYearly ? '+$'+addOn.price+'/yr' : '+$'+addOn.price+'/mo'}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="buttons mt-6 flex justify-between">
+    <button mat-flat-button matStepperPrevious color="warn" class="text-sm font-medium">Back</button>
+    <button mat-flat-button matStepperNext (click)="toFourthStep()" color="primary"
+      class="text-sm font-medium">Next</button>
+  </div>
+</div>

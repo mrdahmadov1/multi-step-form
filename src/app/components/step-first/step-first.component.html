@@ -1,0 +1,18 @@
+  <div ngClass="step-content bg-white p-6 rounded-xl">
+    <h1 ngClass="font-bold text-2xl mt-2">Personal info</h1>
+    <h4 ngClass="text-xs text-gray-400 mt-2 mb-4 w-3/4">Please provide your name, email address and phone number.</h4>
+    <form [formGroup]="personalInfo" (ngSubmit)="onSubmit()">
+      <div ngClass="mb-2" *ngFor="let group of formGroups">
+        <label ngClass="block text-xs font-medium text-blue-900 pb-1"
+          [for]="group.label">{{group.label | titlecase}}</label>
+        <input matInput class="w-full text-sm p-2 border rounded border-gray-200 outline-sky-400"
+          formControlName="{{group.label}}" placeholder={{group.placeholder}}
+          [ngClass]="{'invalid': isInvalid(group.label)}" required>
+        <small *ngIf="isInvalid(group.label)" class="text-red-500">{{getErrorMessage(group.label)}}</small>
+      </div>
+      <div class="buttons mt-6 text-right">
+        <button type="submit" mat-flat-button matStepperNext color="primary" class="text-sm font-medium"
+          [disabled]="!personalInfo.valid">Next</button>
+      </div>
+    </form>
+  </div>
