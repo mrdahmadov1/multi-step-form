@@ -33,3 +33,10 @@
   background-color: #fff !important;
   padding: 0 !important;
 }
+
+.step-content {
+  width: calc(100vw - 48px);
+}
+
+
+@media all and (max-width:640px) {}
