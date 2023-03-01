@@ -1,8 +1,6 @@
 # MultiStepForm
 
-## Open on Browser
-
-[Multi-Step-Form](https://multi-stepper.netlify.app/)
+## Open on Browser - [Multi-Step-Form](https://multi-stepper.netlify.app/)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.5.
 
