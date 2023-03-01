@@ -1,9 +1,18 @@
-.mat-horizontal-stepper-header-container {
+.mat-stepper-horizontal {
   background-image: url('../../../assets/images/bg-sidebar-mobile.svg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  width: 100vw;
+  height: 150px;
+}
 
+.mat-horizontal-stepper-wrapper {
+  margin: auto;
+  max-width: 768px;
+}
+
+.mat-horizontal-stepper-header-container {
   padding: 12px 48px 108px;
 }
 
@@ -25,8 +34,11 @@
 }
 
 .mat-horizontal-content-container {
-  position: absolute;
-  top: 100px;
+  /* position: absolute; */
+  /* top: 100px; */
+  /* width: 100% !important; */
+  margin-top: -100px;
+  padding: 0 !important;
 }
 
 .mat-mdc-text-field-wrapper {
@@ -35,7 +47,7 @@
 }
 
 .step-content {
-  width: calc(100vw - 48px);
+  width: calc(100% - 48px);
 }
 
 
